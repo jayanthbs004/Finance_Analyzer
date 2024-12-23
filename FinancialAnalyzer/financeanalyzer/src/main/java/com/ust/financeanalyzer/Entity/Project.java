@@ -11,13 +11,15 @@ public class Project {
     private String projectname;
     private String budget;
     private String budgetduration;
+    private  int teamSize;
     public Project() {
     }
-    public Project(String projectid, String projectname, String budget, String budgetduration) {
+    public Project(String projectid, String projectname, String budget, String budgetduration,int teamSize) {
         this.projectid = projectid;
         this.projectname = projectname;
         this.budget = budget;
         this.budgetduration = budgetduration;
+        this.teamSize=teamSize;
     }
     public String getProjectid() {
         return projectid;
@@ -43,5 +45,12 @@ public class Project {
     public void setBudgetduration(String budgetduration) {
         this.budgetduration = budgetduration;
     }
-    
+
+    public int getTeamSize() {
+        return teamSize;
+    }
+
+    public void setTeamSize(int teamSize) {
+        this.teamSize = teamSize;
+    }
 }
