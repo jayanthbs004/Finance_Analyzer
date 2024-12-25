@@ -1,7 +1,10 @@
 package com.ust.financeanalyzer.service;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 import com.ust.financeanalyzer.Entity.Employee;
@@ -9,9 +12,12 @@ import com.ust.financeanalyzer.Entity.Project;
 import com.ust.financeanalyzer.Repository.EmployeeRepository;
 import com.ust.financeanalyzer.Repository.ProjectRepository;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 =======
+=======
+>>>>>>> Stashed changes
 import com.ust.financeanalyzer.dto.Employeedto;
 import com.ust.financeanalyzer.dto.Projectdto;
 import com.ust.financeanalyzer.dto.Responsedto;
@@ -19,6 +25,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import reactor.core.publisher.Flux;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 import reactor.core.publisher.Mono;
 
@@ -32,21 +41,31 @@ public class FinancialApplicationService {
     private EmployeeRepository employeeRepository;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     @Autowired
     private ProjectRepository projectRepository;
 
 =======
+=======
+>>>>>>> Stashed changes
 
     @Autowired
     private ProjectRepository projectRepository;
 
     // Add a new project
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     public Mono<Project> addProject(Project project) {
         return projectRepository.save(project);
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    // Add a new employee
+>>>>>>> Stashed changes
 =======
     // Add a new employee
 >>>>>>> Stashed changes
@@ -54,6 +73,7 @@ public class FinancialApplicationService {
         return employeeRepository.save(employee);
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     public Mono<Employee> assignProjectToEmployee(String id, String projectId) {
         return employeeRepository.findById(id)
@@ -75,6 +95,8 @@ public class FinancialApplicationService {
 
             List<Mono<Employee>> assignments = id.stream()
 =======
+=======
+>>>>>>> Stashed changes
     // Assign a project to an employee
     public Mono<Employee> assignProjectToEmployee(String id, String projectId) {
         return employeeRepository.findById(id)
@@ -101,12 +123,16 @@ public class FinancialApplicationService {
             }
 
             List<Mono<Employee>> assignmentList = idList.stream()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                     .map(employeeId -> employeeRepository.findById(employeeId)
                             .flatMap(employee -> {
                                 if (teamSize <= 0) {
                                     return Mono.error(new RuntimeException("Project team size exceeded"));
                                 }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                                 employee.setProjectid(projectId);
                                 return employeeRepository.save(employee).then(Mono.just(employee));
@@ -115,22 +141,30 @@ public class FinancialApplicationService {
 
             return Mono.when(assignments)
 =======
+=======
+>>>>>>> Stashed changes
                                 employee.setProjectId(projectId);
                                 return employeeRepository.save(employee);
                             }))
                     .collect(Collectors.toList());
 
             return Mono.when(assignmentList)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                     .then(Mono.just("Employees assigned to project successfully"));
         });
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
 }
 =======
+=======
+>>>>>>> Stashed changes
     // Get project statistics including employee details and salaries
     public Mono<Responsedto> getStatisticsOfProject(String projectId) {
         Mono<Project> projectMono = projectRepository.findById(projectId);
@@ -222,4 +256,7 @@ public class FinancialApplicationService {
         }
     }}
     // Utility function to adjust salary based on budget duration
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -17,8 +17,13 @@ public class Project {
     public Project() {
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public Project(String projectid, String projectname, String budget, String budgetduration,int teamSize) {
         this.projectid = projectid;
+=======
+    public Project(String projectId, String projectname, Double budget, String budgetduration,int teamSize) {
+        this.projectId = projectId;
+>>>>>>> Stashed changes
 =======
     public Project(String projectId, String projectname, Double budget, String budgetduration,int teamSize) {
         this.projectId = projectId;
