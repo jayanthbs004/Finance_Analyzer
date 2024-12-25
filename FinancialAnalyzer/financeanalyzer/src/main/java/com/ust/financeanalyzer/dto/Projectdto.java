@@ -1,54 +1,57 @@
+package com.ust.financeanalyzer.dto;
 
-package com.ust.financeanalyzer.Entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "project")
-public class Project {
-    @Id
-    @JsonProperty("projectId")
-    private String projectId;
+public class Projectdto {
+    private String projectid;
     private String projectname;
     private Double budget;
     private String budgetduration;
     private  int teamSize;
-    public Project() {
+    private  Double expenditure;
+    private Double income;
+
+    public Projectdto() {
     }
-<<<<<<< Updated upstream
-    public Project(String projectid, String projectname, String budget, String budgetduration,int teamSize) {
+
+    public Projectdto(String projectid, String projectname, Double budget, String budgetduration, int teamSize, Double expenditure, Double income) {
         this.projectid = projectid;
-=======
-    public Project(String projectId, String projectname, Double budget, String budgetduration,int teamSize) {
-        this.projectId = projectId;
->>>>>>> Stashed changes
         this.projectname = projectname;
         this.budget = budget;
         this.budgetduration = budgetduration;
-        this.teamSize=teamSize;
+        this.teamSize = teamSize;
+        this.expenditure = expenditure;
+        this.income = income;
     }
+
     public String getProjectid() {
-        return projectId;
+        return projectid;
     }
+
     public void setProjectid(String projectid) {
-        this.projectId = projectId;
+        this.projectid = projectid;
     }
+
     public String getProjectname() {
         return projectname;
     }
+
     public void setProjectname(String projectname) {
         this.projectname = projectname;
     }
+
     public Double getBudget() {
         return budget;
     }
+
     public void setBudget(Double budget) {
         this.budget = budget;
     }
+
     public String getBudgetduration() {
         return budgetduration;
     }
+
     public void setBudgetduration(String budgetduration) {
         this.budgetduration = budgetduration;
     }
@@ -60,4 +63,21 @@ public class Project {
     public void setTeamSize(int teamSize) {
         this.teamSize = teamSize;
     }
+
+    public Double getExpenditure() {
+        return expenditure;
+    }
+
+    public void setExpenditure(Double expenditure) {
+        this.expenditure = expenditure;
+    }
+
+    public Double getIncome() {
+        return income;
+    }
+
+    public void setIncome(Double income) {
+        this.income = income;
+    }
+
 }
