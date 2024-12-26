@@ -1,47 +1,58 @@
-
 package com.ust.financeanalyzer.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "project")
 public class Project {
     @Id
-    private String projectid;
+    @JsonProperty("projectId")
+    private String projectId;
     private String projectname;
     private Double budget;
     private String budgetduration;
-    private  int teamSize;
+    private int teamSize;
+
     public Project() {
     }
-    public Project(String projectid, String projectname, Double budget, String budgetduration,int teamSize) {
-        this.projectid = projectid;
+
+    public Project(String projectId, String projectname, Double budget, String budgetduration, int teamSize) {
+        this.projectId = projectId;
         this.projectname = projectname;
         this.budget = budget;
         this.budgetduration = budgetduration;
-        this.teamSize=teamSize;
+        this.teamSize = teamSize;
     }
-    public String getProjectid() {
-        return projectid;
+
+    public String getProjectId() {
+        return projectId;
     }
-    public void setProjectid(String projectid) {
-        this.projectid = projectid;
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
+
     public String getProjectname() {
         return projectname;
     }
+
     public void setProjectname(String projectname) {
         this.projectname = projectname;
     }
+
     public Double getBudget() {
         return budget;
     }
+
     public void setBudget(Double budget) {
         this.budget = budget;
     }
+
     public String getBudgetduration() {
         return budgetduration;
     }
+
     public void setBudgetduration(String budgetduration) {
         this.budgetduration = budgetduration;
     }
